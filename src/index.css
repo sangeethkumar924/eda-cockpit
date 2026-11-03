@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --eda-navy-950: #080D1A;
+    --eda-navy-900: #0B1120;
+    --eda-navy-800: #0F172A;
+    --eda-navy-700: #1E293B;
+    --eda-navy-600: #334155;
+    --eda-accent: #3B82F6;
+    --eda-violet: #8B5CF6;
+  }
+
+  body {
+    background-color: #0B1120;
+    color: #F8FAFC;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom engineering scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Monospace code styling */
+.font-code {
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+/* EDA Glow utilities */
+.glow-blue {
+  box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.25);
+}
+
+.glow-violet {
+  box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.25);
+}
+
+.glow-green {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+}
+
+/* Terminal scanline subtle effect */
+.terminal-grid {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Shimmer animation for AI agents */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.8s infinite;
+}
+
+/* Print styling for professional reports */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+  aside, header, .no-print, button {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .card-print {
+    border: 1px solid #CBD5E1 !important;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+}
